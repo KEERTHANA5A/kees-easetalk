@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kee's EaseTalk</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- Homepage -->
+<div class="main-container" id="homepage">
+    <div class="container">
+        <button class="history-button" onclick="showPage('history')">History</button>
+        <h2 class="special">Specially for Differently Abled People</h2>
+        <h1>Kee's EaseTalk</h1>
+        <h2 class="communication">Communication Made Easy</h2>
+        <button onclick="showPage('speech_to_text')">Speech to Text</button>
+        <button onclick="showPage('signs_to_text')">Signs to Text</button>
+    </div>
+</div>
+
+<!-- Speech to Text Page -->
+<div class="main-container" id="speech_to_text" style="display:none;">
+    <div class="container">
+        <a class="back-button" onclick="showPage('homepage')">Back</a>
+        <h1>Speech to Text</h1>
+        <div class="section">
+            <label for="input-language">Select the language you're going to speak:</label>
+            <select id="input-language">...</select>
+        </div>
+        <div class="section">
+            <label for="output-language">Select the language you want to translate to:</label>
+            <select id="output-language">...</select>
+        </div>
+        <div class="button-container">
+            <button id="start-btn">Start</button>
+            <button id="stop-btn">Stop</button>
+            <button id="clear-btn">Clear</button>
+        </div>
+        <div class="transcription-box" id="transcription"></div>
+    </div>
+</div>
+
+<!-- Signs to Text Page -->
+<div class="main-container" id="signs_to_text" style="display:none;">
+    <div class="container">
+        <a class="back-button" onclick="showPage('homepage')">Back</a>
+        <h1>Signs to Text</h1>
+        <div class="button-container">
+            <button id="start-camera-btn">Start Camera</button>
+            <button id="stop-camera-btn">Stop Camera</button>
+        </div>
+        <div class="video-box">
+            <video id="video" autoplay></video>
+        </div>
+        <div class="transcription-box" id="sign-transcription"></div>
+    </div>
+</div>
+
+<!-- History Page -->
+<div class="main-container" id="history" style="display:none;">
+  <div class="container">
+    <a class="back-button" onclick="showPage('homepage')">Back</a>
+    <h1>History</h1>
+    <div class="history-list" id="history-list">
+      <!-- History items will be loaded here dynamically -->
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
